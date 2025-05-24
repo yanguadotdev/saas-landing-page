@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧪 SaaS Landing Page — Diseño y Maquetación
 
-## Getting Started
+Este proyecto es una landing page moderna para un producto SaaS, construida como ejercicio de práctica para mejorar mis habilidades en desarrollo web frontend. El diseño se inspira en interfaces limpias, atractivas y profesionales, con animaciones suaves e interacciones dinámicas.
 
-First, run the development server:
+![Preview](./public/preview.jpg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+- **Next.js** – Framework React para renderizado híbrido y routing optimizado.
+- **React** – Librería principal para construir la UI basada en componentes.
+- **Tailwind CSS** – Utilizado para un diseño responsivo, rápido y elegante mediante clases utilitarias.
+- **Framer Motion** – Librería para animaciones suaves y controladas en React.
+
+## 🎯 Objetivo del Proyecto
+
+- Mejorar mis habilidades en diseño UI/UX moderno y frontend.
+- Aprender prácticas profesionales integrando tecnologías actuales.
+- Reforzar el uso de Tailwind para layouts rápidos y mantenibles.
+- Explorar animaciones con Framer Motion para mejorar la experiencia de usuario.
+
+## 📂 Estructura del Proyecto
+
+```
+/app            → Estructura de páginas (Next.js App Router)
+/components     → Componentes reutilizables como Navbar, Hero, Cards, etc.
+/styles         → Estilos globales y personalizados
+/src/assets     → Imágenes, íconos, SVGs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Funcionalidades del Diseño
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Layout responsivo para todas las resoluciones.
+- Animaciones suaves al cargar, al hacer hover o al interactuar.
+- Diseño oscuro con colores vivos para contraste y jerarquía visual.
+- Componentes bien separados y reutilizables para escalabilidad.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Lo que aprendí
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Uso eficiente de `Tailwind CSS` para construir secciones complejas sin escribir CSS tradicional.
+- Aplicación de animaciones con `Framer Motion` incluyendo `variants`, `transitions` y `layout`.
+- Mejores prácticas en diseño web moderno con enfoque en experiencia de usuario.
