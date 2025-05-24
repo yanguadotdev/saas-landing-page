@@ -56,7 +56,7 @@ export default function Hero() {
             name='email'
             id='email'
             placeholder='Enter your email'
-            className='bg-transparent px-4 focus:outline-none md:flex-1'
+            className='bg-transparent px-4 focus:outline-none md:flex-1 w-full'
           />
           <Button
             className='whitespace-nowrap'

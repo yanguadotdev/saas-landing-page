@@ -1,4 +1,12 @@
-export function Menu({ className }: { className?: string }) {
+import { twMerge } from 'tailwind-merge'
+
+interface MenuIconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string
+  isOpen: boolean
+}
+
+export function MenuIcon(props: MenuIconProps) {
+  const { className, isOpen, ...rest } = props
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -11,10 +19,35 @@ export function Menu({ className }: { className?: string }) {
       strokeLinecap='round'
       strokeLinejoin='round'
       className={className}
+      {...rest}
     >
-      <line x1='3' y1='12' x2='21' y2='12'></line>
-      <line x1='3' y1='6' x2='21' y2='6'></line>
-      <line x1='3' y1='18' x2='21' y2='18'></line>
+      <line
+        x1='3'
+        y1='6'
+        x2='21'
+        y2='6'
+        className={twMerge(
+          'origin-left transition duration-300',
+          isOpen && 'rotate-45 -translate-y-1'
+        )}
+      ></line>
+      <line
+        x1='3'
+        y1='12'
+        x2='21'
+        y2='12'
+        className={twMerge('transition duration-300', isOpen && 'opacity-0')}
+      ></line>
+      <line
+        x1='3'
+        y1='18'
+        x2='21'
+        y2='18'
+        className={twMerge(
+          'origin-left transition duration-300',
+          isOpen && '-rotate-45 translate-y-1'
+        )}
+      ></line>
     </svg>
   )
 }
