@@ -1,26 +1,57 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+'use client'
+
 import Button from '@/components/Button'
 import designExample1Image from '@/assets/design-example-1.png'
 import designExample2Image from '@/assets/design-example-2.png'
 import Image from 'next/image'
 import MousePointer from '@/components/Pointer'
+import { motion, useAnimate } from 'motion/react'
+import { useEffect } from 'react'
 
 export default function Hero() {
+  const [leftDesignScope, leftDesignAnimate] = useAnimate()
+  const [leftPointerScope, leftPointerAnimate] = useAnimate()
+
+  useEffect(() => {
+    leftDesignAnimate([
+      [leftDesignScope.current, { opacity: 1 }, { duration: 0.5 }],
+      [leftDesignScope.current, { y: 0, x: 0 }, { duration: 0.5 }]
+    ])
+
+    leftPointerAnimate([
+      [leftPointerScope.current, { opacity: 1 }, { duration: 0.5 }],
+      [leftPointerScope.current, { y: 0, x: -100 }, { duration: 0.5 }],
+      [
+        leftPointerScope.current,
+        { x: 0, y: [0, 16, 0] },
+        { duration: 0.5, ease: 'easeInOut' }
+      ]
+    ])
+  }, [])
+
   return (
     <section id='hero' className='py-24 overflow-clip'>
       <div className='container relative mx-auto'>
-        <div className='absolute -left-32 top-16 hidden lg:block'>
+        <motion.div
+          ref={leftDesignScope}
+          initial={{ opacity: 0, y: 100, x: -100 }}
+          className='absolute -left-32 top-16 hidden lg:block'
+        >
           <Image src={designExample1Image} alt='Design example 1 image' />
-        </div>
+        </motion.div>
+        <motion.div
+          ref={leftPointerScope}
+          initial={{ opacity: 0, y: 100, x: -200 }}
+          className='absolute left-56 top-96 hidden lg:block'
+        >
+          <MousePointer name='Andrea' />
+        </motion.div>
 
         <div className='absolute -right-64 -top-16 hidden lg:block'>
           <Image src={designExample2Image} alt='Design example 2 image' />
         </div>
-
-        <div className='absolute left-56 top-96 hidden lg:block'>
-          <MousePointer name='Andrea' />
-        </div>
-
-        <div className="absolute right-80 -top-4 hidden lg:block">
+        <div className='absolute right-80 -top-4 hidden lg:block'>
           <MousePointer name='Samir' color='red' />
         </div>
 
