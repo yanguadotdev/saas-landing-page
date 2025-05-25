@@ -16,12 +16,12 @@ export default function Footer() {
             <Image src={logoImage} alt='Layers Logo' />
           </div>
           <div>
-            <nav className='flex gap-4'>
+            <nav className='flex gap-6'>
               {footerLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className='text-white/60 hover:text-white px-4 py-2 text-sm'
+                  className='text-white/60 hover:text-white py-2 text-sm whitespace-nowrap'
                 >
                   {link.label}
                 </a>
