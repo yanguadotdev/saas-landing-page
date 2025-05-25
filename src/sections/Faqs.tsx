@@ -1,5 +1,9 @@
+'use client'
+
 import { PlusIcon } from '@/components/Icons'
 import Tagline from '@/components/Tagline'
+import { AnimatePresence, motion } from 'motion/react'
+import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 const faqs = [
@@ -31,7 +35,7 @@ const faqs = [
 ]
 
 export default function Faqs() {
-  const selectIndex = 0
+  const [selectIndex, setSelectedIndex] = useState(0)
   return (
     <section className='py-24'>
       <div className='container mx-auto'>
@@ -49,19 +53,40 @@ export default function Faqs() {
               key={faqIndex}
               className='bg-neutral-900 rounded-2xl border border-white/10 p-8'
             >
-              <div className='flex items-center justify-between'>
+              <div
+                className='flex items-center justify-between cursor-pointer'
+                onClick={() => setSelectedIndex(faqIndex)}
+              >
                 <h3 className='text-xl font-medium'>{faq.question}</h3>
-                <PlusIcon className={twMerge('text-lime-400 flex-shrink-0', selectIndex === faqIndex && 'rotate-45')} />
+                <PlusIcon
+                  className={twMerge(
+                    'text-lime-400 flex-shrink-0 transition duration-300',
+                    selectIndex === faqIndex && 'rotate-45'
+                  )}
+                />
               </div>
 
-              <div
-                className={twMerge(
-                  'mt-6',
-                  selectIndex !== faqIndex && 'hidden'
+              <AnimatePresence>
+                {selectIndex === faqIndex && (
+                  <motion.div
+                    initial={{
+                      height: 0,
+                      marginTop: 0
+                    }}
+                    animate={{
+                      height: 'auto',
+                      marginTop: 24
+                    }}
+                    exit={{
+                      height: 0,
+                      marginTop: 0
+                    }}
+                    className={twMerge('mt-6 overflow-clip')}
+                  >
+                    <p className='text-white/60'>{faq.answer}</p>
+                  </motion.div>
                 )}
-              >
-                <p className='text-white/60'>{faq.answer}</p>
-              </div>
+              </AnimatePresence>
             </div>
           ))}
         </div>
