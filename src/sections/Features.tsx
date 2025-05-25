@@ -3,6 +3,7 @@ import Tagline from '@/components/Tagline'
 import avatar1 from '@/assets/avatar-ashwin-santiago.jpg'
 import avatar2 from '@/assets/avatar-lula-meyers.jpg'
 import avatar3 from '@/assets/avatar-florence-shaw.jpg'
+import avatar4 from '@/assets/avatar-owen-garcia.jpg'
 import Image from 'next/image'
 import Avatar from '@/components/Avatar'
 import Key from '@/components/Key'
@@ -30,23 +31,40 @@ export default function Features() {
 
         <div className='mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8'>
           <FeatureCard
-            className='md:col-span-2 lg:col-span-1'
+            className='md:col-span-2 lg:col-span-1 group'
             title='Real-time Collaboration'
             description='Work together in real-time, no matter where you are. Layers
                 makes it easy to collaborate with your team'
           >
             <div className='aspect-video flex items-center justify-center'>
               <Avatar className='z-40'>
-                <Image src={avatar1} className='rounded-full' alt='' />
+                <Image
+                  src={avatar1}
+                  className='rounded-full'
+                  alt='Avatar of Aswin Santiago'
+                />
               </Avatar>
               <Avatar className='-ml-6 border-indigo-500 z-30'>
-                <Image src={avatar2} className='rounded-full' alt='' />
+                <Image
+                  src={avatar2}
+                  className='rounded-full'
+                  alt='Avatar of Lula Meyers'
+                />
               </Avatar>
               <Avatar className='-ml-6 border-amber-500 z-20'>
-                <Image src={avatar3} className='rounded-full' alt='' />
+                <Image
+                  src={avatar3}
+                  className='rounded-full'
+                  alt='Avatar of Florence Shawn'
+                />
               </Avatar>
-              <Avatar className='-ml-6'>
-                <div className='size-full bg-neutral-700 rounded-full inline-flex items-center justify-center gap-1'>
+              <Avatar className='-ml-6 border-transparent group-hover:border-green-500'>
+                <div className='size-full bg-neutral-700 rounded-full inline-flex items-center justify-center gap-1 relative'>
+                  <Image
+                    src={avatar4}
+                    className='rounded-full absolute size-full opacity-0 group-hover:opacity-100 transition'
+                    alt='Avatar of Owen Garcia'
+                  />
                   {Array.from({ length: 3 }, (_, i) => (
                     <span
                       key={i}
@@ -76,15 +94,21 @@ export default function Features() {
           </FeatureCard>
 
           <FeatureCard
-            className='md:col-span-2 md:col-start-2 lg:col-span-1 lg:col-start-auto'
+            className='md:col-span-2 md:col-start-2 lg:col-span-1 lg:col-start-auto group'
             title='Keyboard Quick Actions'
             description='Powerfull commands to help you create and edit your designs
                 faster than ever. Layers allows you to use keyboard shortcuts.'
           >
             <div className='aspect-video flex items-center justify-center gap-3'>
-              <Key className='w-28'>shift</Key>
-              <Key>alt</Key>
-              <Key>C</Key>
+              <Key className='w-28 outline-2 group-hover:translate-y-1 outline-lime-400'>
+                shift
+              </Key>
+              <Key className='outline-2 group-hover:translate-y-1 outline-lime-400 delay-150'>
+                alt
+              </Key>
+              <Key className='outline-2 group-hover:translate-y-1 outline-lime-400 delay-300'>
+                C
+              </Key>
             </div>
           </FeatureCard>
         </div>
@@ -93,9 +117,9 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature}
-              className='inline-flex items-center gap-3 bg-neutral-900 border border-white/10 px-3 py-1.5 rounded-2xl'
+              className='inline-flex items-center gap-3 bg-neutral-900 border border-white/10 px-3 py-1.5 rounded-2xl group hover:scale-105 transition duration-500'
             >
-              <span className='bg-lime-400 text-neutral-950 rounded-full size-5 inline-flex items-center justify-center'>
+              <span className='bg-lime-400 text-neutral-950 rounded-full size-5 inline-flex items-center justify-center group-hover:rotate-45 transition duration-500'>
                 &#10038;
               </span>
               <span className='md:text-lg'>{feature}</span>
