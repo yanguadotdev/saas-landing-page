@@ -27,7 +27,7 @@ export default function Introduction() {
   return (
     <section className='py-28 lg:py-40'>
       <div className='container mx-auto'>
-        <div className='sticky top-20 md:top-28 lg:top-32'>
+        <div className='sticky top-28 lg:top-32'>
           <div className='flex justify-center'>
             <Tagline>Introducing Layers</Tagline>
           </div>
