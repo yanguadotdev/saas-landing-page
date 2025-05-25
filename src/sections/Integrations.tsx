@@ -65,6 +65,7 @@ export default function Integrations() {
             <IntegrationColumn
               integrations={integrations.slice().reverse()}
               className='hidden md:flex'
+              reverse
             />
           </div>
         </div>
