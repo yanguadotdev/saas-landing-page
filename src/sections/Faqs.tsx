@@ -51,10 +51,10 @@ export default function Faqs() {
           {faqs.map((faq, faqIndex) => (
             <div
               key={faqIndex}
-              className='bg-neutral-900 rounded-2xl border border-white/10 p-8'
+              className='bg-neutral-900 rounded-2xl border border-white/10'
             >
               <div
-                className='flex items-center justify-between cursor-pointer'
+                className='flex items-center justify-between cursor-pointer p-8'
                 onClick={() => setSelectedIndex(faqIndex)}
               >
                 <h3 className='text-xl font-medium'>{faq.question}</h3>
@@ -71,17 +71,17 @@ export default function Faqs() {
                   <motion.div
                     initial={{
                       height: 0,
-                      marginTop: 0
+                      marginBottom: 0
                     }}
                     animate={{
                       height: 'auto',
-                      marginTop: 24
+                      marginBottom: 32
                     }}
                     exit={{
                       height: 0,
-                      marginTop: 0
+                      marginBottom: 0
                     }}
-                    className={twMerge('mt-6 overflow-clip')}
+                    className={twMerge('overflow-clip px-8 mb-8')}
                   >
                     <p className='text-white/60'>{faq.answer}</p>
                   </motion.div>
