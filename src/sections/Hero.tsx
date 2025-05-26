@@ -68,11 +68,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 100, x: -100 }}
           drag
           dragConstraints={{
-            left: -50,
-            right: 50,
-            top: -50,
-            bottom: 50
+            left: -0,
+            right: 0,
+            top: -0,
+            bottom: 0
           }}
+          dragElastic={0.2}
           className='absolute -left-32 top-16 hidden lg:block'
         >
           <Image
@@ -94,11 +95,12 @@ export default function Hero() {
           initial={{ opacity: 0, x: 100, y: 100 }}
           drag
           dragConstraints={{
-            left: -50,
-            right: 50,
-            top: -50,
-            bottom: 50
+            left: -0,
+            right: 0,
+            top: -0,
+            bottom: 0
           }}
+          dragElastic={0.2}
           className='absolute -right-64 -top-16 hidden lg:block'
         >
           <Image
