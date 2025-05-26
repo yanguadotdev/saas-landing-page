@@ -10,7 +10,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <section className='py-40'>
-      <div className='container mx-auto'>
+      <div className='container mx-auto max-w-6xl'>
         <div className='flex flex-col items-center gap-6 md:flex-row md:justify-between'>
           <div>
             <Image src={logoImage} alt='Layers Logo' />
